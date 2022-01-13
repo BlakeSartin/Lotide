@@ -10,16 +10,16 @@ const eqObjects = function(object1, object2) {
   array = ""
   if (Object.keys(object1).length !== Object.keys(object2).length) {
     return false
-  } else for (let key in object1) {
+  }
+  for (let key of Object.keys(object1)) {
     if (Array.isArray(object1[key]) && Array.isArray(object2[key])) {
       array = eqArrays(object1[key], object2[key])
       return array
-    } else if (object1[key] === object2[key]) {
-      return true
-    } else {
+    } else if (object1[key] !== object2[key]) {
       return false
     }
   }
+  return true
 }
 
 const cd = { c: "1", d: ["2", 3] };
