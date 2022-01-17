@@ -1,6 +1,4 @@
-const eqArrays = (actual, expected) =>
-actual.length === expected.length &&
-actual.every((v, i) => v === expected[i])
+const eqArrays = require('./eqArrays')
   
 const assertArraysEqual = function(actual, expected) {
   if (eqArrays) {
@@ -10,4 +8,4 @@ const assertArraysEqual = function(actual, expected) {
   }
 }
 
-assertArraysEqual([1,2,3], [1,2,3])
+module.exports = assertArraysEqual
