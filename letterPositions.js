@@ -1,15 +1,6 @@
-const eqArrays = (actual, expected) =>
-actual.length === expected.length &&
-actual.every((v, i) => v === expected[i])
+const eqArrays = require('./eqArrays')
   
-const assertArraysEqual = function(actual, expected) {
-  if (eqArrays) {
-    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`)
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
-  }
-}
-
+const assertArraysEqual = require('./assertArraysEqual')
 
 const letterPositions = function(sentence) {
   const result = {}
@@ -28,3 +19,4 @@ for (let letter of sentence) {
   return result
 }
 
+module.exports = letterPositions
